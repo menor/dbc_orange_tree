@@ -1,6 +1,6 @@
 describe (" new Tree ", function() {
   it("should return a tree object", function() {
-    expect( new Tree).toBeDefined();
+    expect(new Tree).toBeDefined();
   });
   it("should return tree with age 0 when created", function() {
     var tree= new Tree;
