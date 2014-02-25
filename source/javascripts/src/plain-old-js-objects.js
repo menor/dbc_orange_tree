@@ -13,16 +13,22 @@ Tree.prototype = {
   grow: function(){
     this.age += 1;
     this.height += 10;
-    if(this.age == FRUIT_BEARING_AGE) {
-      this.orangeCount += Math.floor(Math.random()*11);
-    }
-    if(this.age > MAX_AGE) {
-      this.isAlive = false;
-    }
+    this.yield();
+    this.die();
   },
   dropOrange: function() {
     this.orangeCount -= 1;
     return 'orange';
+  },
+  die: function() {
+    if(this.age > MAX_AGE) {
+      this.isAlive = false;
+    }
+  },
+  yield: function() {
+    if(this.age == FRUIT_BEARING_AGE) {
+      this.orangeCount += Math.floor(Math.random()*11);
+    }
   }
 }
 
