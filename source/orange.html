@@ -8,10 +8,11 @@
 
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/src/typed-objects.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <!-- feel free to replace typed-objects with the plain-old-js-objects,
   depending on how you implement your view.js -->
   <script src="javascripts/src/view.js"></script>
-  
+
 
 </head>
 <body>
@@ -22,12 +23,17 @@
   <div class="grove">
     <button class="plant">Plant Orange Tree</button>
   </div>
-
+  <div class="grove">
+    <button class="age">Age Orange Tree</button>
+  </div>
+    <div class="grove">
+    <button class="pick">Pick Orange</button>
+  </div>
   <div id="orange-tree-template">
     <div class="orange-tree">
       <h2>Tree Name</h2>
-      <p class="age">0</p>
-      <p class="fruit-count">0</p>
+      <label>Age</label><p class="age">Age</p>
+      <label>Oranges</label><p class="fruit-count"></p>
       <button class="pick">Pick!</button>
       <button class="age">Age!</button>
       <div class="display-tree-big"><div>

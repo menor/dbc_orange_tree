@@ -8,7 +8,8 @@ var createTree = function(){
     orangeCount: 0,
     isAlive: true,
     grow: function() {
-      this.age +=1, this.height += 10
+      this.age +=1,
+      this.height += 10
       if(this.age>=FRUIT_BEARING_AGE){
         this.orangeCount = Math.floor(Math.random()*100)
       }
@@ -32,5 +33,5 @@ function pickOrange() {
 
 
 
-tree = createTree();
+
 

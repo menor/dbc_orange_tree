@@ -7,6 +7,8 @@ function Tree() {
   this.height = 0;
   this.orangeCount = 0;
   this.isAlive = true;
+  this.isFruitBearing = false;
+
 }
 
 var TreePrototype = {
@@ -15,6 +17,7 @@ var TreePrototype = {
     this.height += 10;
     if (this.age >= FRUIT_BEARING_AGE) {
       this.orangeCount += Math.floor((Math.random()*10)+1);
+      this.isFruitBearing = true;
     } else {
       this.orangeCount = 0;
     }
