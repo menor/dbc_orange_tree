@@ -7,6 +7,7 @@ function createTree() {
     orangeCount: 0,
     grow: function() {
       this.age++;
+      this.height += 10;
     }
   }
 }

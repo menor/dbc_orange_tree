@@ -22,7 +22,7 @@ describe ("createTree", function() {
       expect(tree.age).toEqual(1);
     });
 
-    xit("should increase the height of the tree by 10 inches", function() {
+    it("should increase the height of the tree by 10 inches", function() {
       var tree=createTree();
       tree.grow();
       expect(tree.height).toEqual(10);
