@@ -27,7 +27,7 @@ function createTree() {
 
     bearFruit: function() {
                  if (this.age >= FRUIT_BEARING_AGE) {
-                   var yield = Math.floor(Math.random()*4);
+                   var yield = Math.floor(Math.random()*4) + 1;
                    this.orangeCount += yield
                    for (var i = 0; i < yield; i++) {
                      this.oranges.push(new Orange())
