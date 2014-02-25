@@ -1,1 +1,9 @@
-/* Write your JS to modify the view here */
+
+
+
+var PlantTree = {
+  function(){ $('#orange-tree-template').show});
+};
+
+
+ $('button.plant').on("click", PlantTree);
