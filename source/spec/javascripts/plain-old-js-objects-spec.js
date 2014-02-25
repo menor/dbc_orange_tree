@@ -34,7 +34,7 @@ describe ("createTree", function() {
       }
       expect(tree.orangeCount).toBeGreaterThan(0);
     });
-    xit("should have 0 oranges if age < FRUIT_BEARING_AGE", function() {
+    it("should have 0 oranges if age < FRUIT_BEARING_AGE", function() {
       var tree=createTree();
       while (tree.age < (FRUIT_BEARING_AGE-1)) {
         tree.grow();
