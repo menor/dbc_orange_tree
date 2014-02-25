@@ -1,6 +1,6 @@
 /* Write your code for the plain-old-js-objects-spec here */
 FRUIT_BEARING_AGE = 6;
-MAX_AGE = 100;
+MAX_AGE = 20;
 
 
 function Tree(){
@@ -11,7 +11,7 @@ function Tree(){
 };
 
 function Orange(){
-  this.diameter = Math.floor(Math.random() * 10);
+  this.diameter = Math.floor(Math.random()*2);
 }
 
 Tree.prototype = {
@@ -20,7 +20,7 @@ Tree.prototype = {
     this.age += 1;
     this.height += 10;
     if (this.age >= FRUIT_BEARING_AGE){
-      this.orangeCount = Math.floor(Math.random() * 100);
+      this.orangeCount = Math.floor(Math.random()*2);
     }
 
     if (this.age > MAX_AGE){
