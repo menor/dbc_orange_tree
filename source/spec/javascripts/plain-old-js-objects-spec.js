@@ -44,7 +44,7 @@ describe ("createTree", function() {
   });
 
   describe ("die",function() {
-    xit("should be alive when age <= MAX_AGE",function() {
+    it("should be alive when age <= MAX_AGE",function() {
       var tree=createTree();
       while (tree.age < (MAX_AGE-1)) {
         tree.grow();
