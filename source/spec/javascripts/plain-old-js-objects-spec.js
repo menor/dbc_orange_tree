@@ -16,7 +16,7 @@ describe ("createTree", function() {
   });
   describe("grow", function() {
 
-    xit("should increase the age of the tree by 1 year", function() {
+    it("should increase the age of the tree by 1 year", function() {
       var tree=createTree();
       tree.grow();
       expect(tree.age).toEqual(1);

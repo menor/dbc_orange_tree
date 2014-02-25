@@ -4,6 +4,9 @@ function createTree() {
   return { 
     age: 0,
     height: 0,
-    orangeCount: 0
+    orangeCount: 0,
+    grow: function() {
+      this.age++;
+    }
   }
 }
