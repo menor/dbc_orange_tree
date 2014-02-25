@@ -27,7 +27,7 @@ describe ("createTree", function() {
       tree.grow();
       expect(tree.height).toEqual(10);
     });
-    xit("should add a random number of oranges if age = FRUIT_BEARING_AGE", function() {
+    it("should add a random number of oranges if age = FRUIT_BEARING_AGE", function() {
       var tree=createTree();
       while (tree.age < FRUIT_BEARING_AGE) {
         tree.grow();
