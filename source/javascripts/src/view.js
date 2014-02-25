@@ -1,6 +1,6 @@
 /* Write your JS to modify the view here */
 
-var JQueryWrapper = {
+var $Wrapper = {
   plantTree: function() {
     $("#orange-tree-template").css({"display":"inline"});
     tree = createTree();
@@ -11,7 +11,7 @@ var JQueryWrapper = {
     $('p.age').html(tree.age);
     if (tree.age > MAX_AGE)
     {
-      JQueryWrapper.killTree();
+      $Wrapper.killTree();
     }
     else if (tree.age >= FRUIT_BEARING_AGE)
     {
@@ -26,23 +26,30 @@ var JQueryWrapper = {
       $('.display-tree-small').fadeIn('slow',function(){
         $('.display-tree-small').fadeOut('fast');
       });
+  },
+  pickOrange: function(){
+    if ($Wrapper.orange() && tree.isAlive)
+    {
+    $Wrapper.orange().remove();
+    $("h2").html("You picked an orange!");
+    var orange = tree.dropOrange();
+    var count = $('p.fruit-count').html();
+    $('p.fruit-count').html(parseInt(count) + 1);
+    }
+    else
+    {
+    $("h2").html("No more oranges!");
+    }
+  },
+  orange: function(){
+    var src = "orange.gif";
+    return $('img[src$="'+ src + '"]')[0];
   }
 };
 
-
 $(function () {
-  $("button.plant").click(JQueryWrapper.plantTree);
-
-
-  $(".pick").click(function() {
-
-  });
-
-  $(".age").click(JQueryWrapper.ageTree);
-
+  $("button.plant").click($Wrapper.plantTree);
+  $(".pick").click($Wrapper.pickOrange);
+  $(".age").click($Wrapper.ageTree);
 });
 
-
-// Plant Tree
-// Create new tree and generate tree image on page.
-// Using tree attributes update HTML on page.
