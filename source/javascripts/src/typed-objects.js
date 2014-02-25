@@ -1,7 +1,7 @@
 // Write your Orange Tree code here - you may use constructor functions
 
 var FRUIT_BEARING_AGE = 10
-var MAX_AGE = 100
+var MAX_AGE = 20
 
 function Tree(){
   this.age = 0
