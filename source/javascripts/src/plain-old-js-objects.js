@@ -19,28 +19,30 @@ var createTree = function () {
 Tree.prototype = {
   //grow
   grow: function() {
+    var newOranges = 0;
     if (this.age <= MAX_AGE) {
       this.age += 1;
       this.height += 10;
-
       if (this.age >= FRUIT_BEARING_AGE) {
-        this.orangeCount += Math.floor((Math.random() * 12) + 1);
+        newOranges = Math.floor((Math.random() * 12) + 1);
+        this.orangeCount += newOranges;
       }
-
     } else {
       this.isAlive = false;
     }
+    return newOranges;
   },
 
   //drop oranges
   dropOrange: function() {
     var orangesDropped = 0;
     if (this.age >= FRUIT_BEARING_AGE && this.orangeCount > 0) {
-      orangesDropped = Math.floor((Math.random() * 12) + 1);  //this.orangeCount
+      orangesDropped = Math.floor((Math.random() * this.orangeCount) + 1);
     }
     this.orangeCount -= orangesDropped;
     return orangesDropped;
   }
+
 }
 
 
