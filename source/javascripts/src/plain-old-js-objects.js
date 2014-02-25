@@ -32,18 +32,8 @@ Tree.prototype = {
   }
 }
 
-
-function createTree() {
-  orangetree = new Tree();
-  return orangetree;
-};
-
 function Orange() {
   this.diameter = Math.floor(Math.random()*7 +1);
 };
 
-function pickOrange() {
-  orange = new Orange();
-  return orange;
-};
 
