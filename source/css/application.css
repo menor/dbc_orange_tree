@@ -1,5 +1,5 @@
 .display-tree-small{
-  background: url('../images/tree.jpeg');
+  background: url('../images/tree_big.jpeg');
   background-repeat: no-repeat;
   height:200px;
   width:200px;
@@ -7,7 +7,8 @@
 }
 
 .display-tree-big{
-  background: url('../images/tree_big.jpg');
+  background: url('../images/tree.jpeg');
+  background-size: 300px 300px;
   background-repeat: no-repeat;
   height:1000px;
   width:1000px;
