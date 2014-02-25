@@ -4,6 +4,7 @@ FRUIT_BEARING_AGE = 3;
 MAX_AGE = 10;
 
 function Orange() {
+  this.diameter = Math.floor(Math.random()*4) + 1;
 };
 
 function createTree() {
@@ -45,4 +46,8 @@ function createTree() {
            this.isAlive = false;
          }
   }
+}
+
+function pickOrange() {
+  return new Orange();
 }
