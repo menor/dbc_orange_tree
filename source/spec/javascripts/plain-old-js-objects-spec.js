@@ -10,7 +10,7 @@ describe ("createTree", function() {
     var tree=createTree();
     expect(tree.height).toEqual(0);
   });
-  xit("should have 0 oranges when created", function() {
+  it("should have 0 oranges when created", function() {
     var tree=createTree();
     expect(tree.orangeCount).toEqual(0);
   });
