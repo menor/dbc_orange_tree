@@ -14,8 +14,12 @@ window.onload = function() {
     });
 
   $("button.pick").on("click", function() {
-    picked_orange = tree.dropOrange;
-
+    var picked_orange = tree.pickOrange();
+    $("p.fruit-count").html("Fruit Count: " + tree.orangeCount);
+    //for (i = 0; i < picked_orange; i++){
+      console.log("huehuehue i steal oranges");
+      $('.orange').first().remove();
+    //}
   });
 
 
@@ -27,12 +31,12 @@ window.onload = function() {
 
 
   $("button.age").on("click", function() {
-    newOranges = tree.grow();
+    var newOranges = tree.grow();
     if (tree.isAlive) {
       $("p.age").html("Age: " + tree.age);
       $("p.fruit-count").html("Fruit Count: " + tree.orangeCount);
       for (i = 0; i < newOranges; i++){
-        $("div.display-tree-big").append("<img src=\"images/orange.gif\"></img>");
+        $("div.display-tree-big").append("<img src=\"images/orange.gif\" class=\"orange\"/>");
       }
     } else {
       $("p.age").html("I am Dead, wasted into nothing, damn you cruel world. Damn you.");

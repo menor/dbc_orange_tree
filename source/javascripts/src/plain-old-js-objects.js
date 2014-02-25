@@ -41,7 +41,17 @@ Tree.prototype = {
     }
     this.orangeCount -= orangesDropped;
     return orangesDropped;
+  },
+
+  pickOrange: function() {
+    var orangesPicked = 0;
+    if (this.age >= FRUIT_BEARING_AGE && this.orangeCount > 0) {
+      orangesPicked = 1;
+    }
+    this.orangeCount -= orangesPicked;
+    return orangesPicked;
   }
+
 
 }
 
@@ -54,6 +64,6 @@ function Orange() {
   this.diameter = Math.floor((Math.random() * 10) + 1);
 }
 
-var pickOrange = function () {
-  return new Orange();
-}
+// var pickOrange = function () {
+//   return new Orange();
+// }
