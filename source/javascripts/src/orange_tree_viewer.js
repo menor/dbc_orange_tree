@@ -11,12 +11,13 @@ createTree: function(){
 
 OrangeTreeView.age = function(tree){
   $('.oranges').remove();
-  if (tree.age < tree.maxAge)
-  tree.grow();
-  $('p.fruit-count').html("Fruit: " + tree.orangeCount);
-  $('p.age').html("Age: " + tree.age);
-  for(var i = 0; i<tree.orangeCount;i++){
-    $('.display-tree-big').prepend('<img class="oranges" src="images/orange.gif"/>');
+  if (tree.age < tree.maxAge){
+    tree.grow();
+    $('p.fruit-count').html("Fruit: " + tree.orangeCount);
+    $('p.age').html("Age: " + tree.age);
+    for(var i = 0; i<tree.orangeCount;i++){
+      $('.display-tree-big').prepend('<img class="oranges" src="images/orange.gif"/>');
+    }
   }
 };
 
