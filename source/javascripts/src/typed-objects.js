@@ -1,10 +1,12 @@
 // Write your Orange Tree code here - you may use constructor functions
+
+
 function OrangeTree(){
   this.age = 0,
   this.height = 0,
   this.orangeCount = 0,
-  FRUIT_BEARING_AGE = 5,
-  MAX_AGE = 50,
+  this.fruitBearingAge = 5,
+  this.maxAge = 50,
   this.isAlive = true
 };
 
@@ -20,21 +22,21 @@ OrangeTree.prototype = {
   grow: function(){
     this.age ++;
     this.height += 10;
-    if (this.age >= FRUIT_BEARING_AGE) {
+    this.orangeCount = 0;
+    if (this.age >= this.fruitBearingAge) {
       this.orangeCount += Math.floor(Math.random()*10 + 1);
     }
     this.die();
   },
 
   die: function(){
-    if (this.age > MAX_AGE){
+    if (this.age > this.maxAge){
       this.isAlive = false;
     }
   },
 
   dropOrange: function(){
     this.orangeCount --
-    // pickOrange();
-    return new Orange();
+    pickOrange();
   }
 }
