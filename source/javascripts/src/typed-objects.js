@@ -6,15 +6,8 @@ var Tree = function(){
   this.isAlive = true;
   FRUIT_BEARING_AGE = 10;
   MAX_AGE = 250;
-
-
+  this.fruits = [];
 };
-
-var Orange = function(){
-  this.diameter =Math.random()
-};
-
-var createTree = function(){ return new Tree() };
 
 Tree.prototype ={
 
@@ -22,18 +15,52 @@ Tree.prototype ={
    this.age++;
    this.height += 10;
    if( this.age >= FRUIT_BEARING_AGE){
-    this.orangeCount += Math.random();
+    this.growOranges();
    }
    this.isAlive = (this.age <= MAX_AGE);
   },
 
   dropOrange: function(){
-    this.orange--;
-    return new Orange();
+    this.orangeCount--;
+    var orange = this.fruits.pop();
+    return orange;
   },
+
+  show: function(){
+    var img = '<img id="the-tree" alt="tree" src="images/tree.jpeg"></img>';
+
+    $('.grove').prepend(img);
+  },
+
+  growOranges: function(){
+    orangeNumber = Math.random();
+
+    for(var i = 0; i < orangeNumber; i++){
+      this.fruits.push(new Orange(this.fruits.length + 1));
+    }
+  }
 }
 
-var pickOrange = function(){return new Orange();};
+var createTree = function(){ return new Tree() };
+
+
+
+var Orange = function(id){
+  this.diameter = Math.random()
+  this.id = id
+};
+
+Orange.prototype = {
+  show: function(){
+    var img = '<img class="orange" id="orange-'+this.id+'" alt="orange" src="images/orange.gif"></img>';
+    $('.grove').append(img);
+  },
+  hide: function(){
+    $('img#orange-'+this.id).hide();
+  }
+}
+
+var pickOrange = function(){ return new Orange() };
 
 
 

@@ -1,19 +1,10 @@
 /* Write your JS to modify the view here */
-
-Tree.prototype = {
-  show: function(){
-    var img = '<img id="the-tree" alt="tree" src="images/tree.jpeg"></img>';
-
-    $('.grove').prepend(img);
-  }
-};
-
-
+var grove = [];
 
 var plantTree = function(){
   var tree = createTree();
   tree.show();
-  return tree;
+  grove.push(tree);
 };
 
 
@@ -22,23 +13,40 @@ var InterfaceManager = {}
 InterfaceManager.setupPlantButton = function() {
   $('button.plant').on('click', function(){
     if ($('#the-tree').length == 0){
-      grove.push(plantTree());
+      plantTree();
     };
   });
 };
 
 InterfaceManager.setupAgeButton = function() {
   $('button.age').on('click', function(){
-    grove[0].grow()
+    var fruits = grove[0].fruits
+    var orangeCount = fruits.length;
+
+    grove[0].grow();
+
+    var newFruits = grove[0].fruits.length - orangeCount;
+
+    for(var i = 0; i < newFruits; i++){
+      grove[0].fruits[fruits.length - newFruits].show();
+    };
   });
 }
 
+InterfaceManager.setupPickButton = function(){
+  $("button.pick").on('click', function(){
+    var orange = grove[0].dropOrange();
+    orange.hide()
+  })
+}
+
+
 
 $(document).on('ready', function() {
-  var grove = [];
+
   //Plants a tree when you click on the button
   InterfaceManager.setupPlantButton();
   InterfaceManager.setupAgeButton();
-
+  InterfaceManager.setupPickButton();
 });
 
