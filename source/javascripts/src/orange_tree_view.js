@@ -54,7 +54,7 @@ var OrangeTreeView = {
     $('p.fruit-count').html(0)
     $('p.age').html(0)
     $('#orange-tree-template').toggle();
-    $('.tree_dead').html("YOUR TREE DEADDDD")
+    $('.tree_dead').html("YOUR TREE DEADDD")
     $('.display-tree-big').css({ "background-size": "300px 300px" })
     return
   }
