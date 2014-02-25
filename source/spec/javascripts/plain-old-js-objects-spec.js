@@ -52,7 +52,7 @@ describe ("createTree", function() {
       tree.grow();
       expect(tree.isAlive).toEqual(true);
     });
-    xit("should die when age > MAX_AGE",function() {
+    it("should die when age > MAX_AGE",function() {
       var tree=createTree();
       while (tree.age < MAX_AGE) {
         tree.grow();
