@@ -1,15 +1,18 @@
 /* Write your code for the plain-old-js-objects-spec here */
 
-function Tree(){
-  FRUIT_BEARING_AGE = 3;
-  MAX_AGE = 10;
+
+FRUIT_BEARING_AGE = 3;
+MAX_AGE = 10;
+
+function Tree() {
   this.age = 0;
   this.height = 0;
   this.orangeCount = 0;
+  this.oranges = new Array();
   this.isAlive = true;
 }
 
-function Orange(){
+function Orange() {
   this.diameter = Math.floor((Math.random()*10)+1);
 }
 
@@ -19,6 +22,9 @@ Tree.prototype = {
     this.height += 10;
     if(this.age == FRUIT_BEARING_AGE) {
       this.orangeCount = Math.floor((Math.random()*10)+1);
+      for(var i=0; i<this.orangeCount; i++) {
+        this.oranges.push(new Orange);
+      }
     }
     if(this.age > MAX_AGE) {
       this.isAlive = false;
@@ -33,8 +39,9 @@ Tree.prototype = {
   }
 }
 
-function pickOrange() {
-  return new Orange;
+function pickOrange(tree) {
+  tree.orangeCount--;
+  return tree.oranges.shift();
 }
 
 function createTree(){
