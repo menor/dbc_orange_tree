@@ -7,11 +7,11 @@
 }
 
 .display-tree-big{
-  background: url('../images/tree_big.jpg');
-  background-repeat: no-repeat;
-  height:1000px;
-  width:1000px;
-  border: solid black 2px;
+  /*background: url('../images/tree_big.jpg');
+  background-repeat: no-repeat;*/
+/*  height:1000px;
+  width:1000px;*/
+/*  border: solid black 2px;*/
 }
 
 #orange-tree-template { display: none; }
