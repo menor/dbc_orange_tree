@@ -6,7 +6,7 @@ describe ("createTree", function() {
     var tree=createTree();
     expect(tree.age).toEqual(0);
   });
-  xit("should have height 0 when created", function() {
+  it("should have height 0 when created", function() {
     var tree=createTree();
     expect(tree.height).toEqual(0);
   });

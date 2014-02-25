@@ -2,6 +2,7 @@
 
 function createTree() {
   return { 
-    age: 0
+    age: 0,
+    height: 0
   }
 }
