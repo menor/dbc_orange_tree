@@ -18,12 +18,13 @@ function showTree() {
 function ageTree() {
   tree.grow();
   $('.age').html(tree.age);
-  updateOranges();
   bigTree();
+  updateOranges();
 }
 
 function updateOranges(){
   $('.fruit-count').html(tree.orangeCount);
+  drawOranges();
 }
 
 function pickOrange() {
@@ -37,5 +38,12 @@ function bigTree() {
   if(tree.age >= FRUIT_BEARING_AGE) {
     $('.display-tree-small').addClass('display-tree-big').removeClass('display-tree-small');
   };
+}
+
+function drawOranges(){
+  $('.orange').remove();
+  for (var i=0;i<tree.orangeCount;i+=1) {
+    $('.oranges').prepend("<img class='orange' src='images/orange.gif' />")
+  }
 }
 

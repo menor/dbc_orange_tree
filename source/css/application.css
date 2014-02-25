@@ -17,5 +17,11 @@
 
 #orange-tree-template { display: none; }
 
+.oranges {
+  position: relative;
+  top: 200px;
+  left: 300px;
+}
+
 
 /* Add more styles here*/
