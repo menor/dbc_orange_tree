@@ -63,7 +63,7 @@ describe ("createTree", function() {
   });
 
   describe("dropOrange", function() {
-    xit("should return the orange that is removed from oranges", function() {
+    it("should return the orange that is removed from oranges", function() {
       var tree=createTree();
       while (tree.age< FRUIT_BEARING_AGE) {
         tree.grow();
