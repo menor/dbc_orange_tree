@@ -7,6 +7,7 @@ function Tree(){
   this.height = 0;
   this.orangeCount = 0;
   this.isAlive = true;
+  console.log("new tree");
 }
 
 Tree.prototype = {
