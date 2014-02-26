@@ -15,6 +15,9 @@ OrangesApp.Controller.prototype = {
 
   ageActuatorEvent: function(e) {
                        this.tree.grow();
+                       if (!this.tree.isAlive) {
+                         this.tree = null;
+                       }
                        this.view.update(this);
                       },
 

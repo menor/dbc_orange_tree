@@ -7,9 +7,11 @@ OrangesApp.View.prototype = {
 
   update: function(dataSource) {
             this.updateTreeImage(dataSource);
-            this.updateAgeCount(dataSource);
-            this.updateFruitCount(dataSource);
-            this.updateFruitImages(dataSource);
+            if (dataSource.tree) {
+              this.updateAgeCount(dataSource);
+              this.updateFruitCount(dataSource);
+              this.updateFruitImages(dataSource);
+            }
           },
 
   updateFruitImages: function(dataSource) {
@@ -29,8 +31,10 @@ OrangesApp.View.prototype = {
 
   updateTreeImage: function(dataSource) {
                      if (dataSource.tree) {
+                       $(this.eventingSelectors.plantActuatorSelector).attr('disabled', 'disabled');
                        $(this.opts.treeDivSelector).show();
                      } else {
+                       $(this.eventingSelectors.plantActuatorSelector).removeAttr('disabled');
                        $(this.opts.treeDivSelector).hide();
                      }
                    }
