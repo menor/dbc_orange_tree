@@ -34,3 +34,13 @@ OrangesApp.Binder = {
                           });
                          }
 }
+
+OrangesApp.Controller = function(config) {
+  this.view = config.view;
+};
+
+OrangesApp.Controller.prototype = {
+  plantActuatorEvent: function(e) {
+                        console.log('clicked button');
+                      }
+};
