@@ -3,6 +3,10 @@ $(function() {
   OrangesApp.view = new OrangesApp.View({
     treeDivSelector: "#orange-tree-template"
   });
+  OrangesApp.controller = new OrangesApp.Controller({ view: OrangesApp.view });
+  OrangesApp.Binder.bind({
+    plantActuatorSelector: "button.plant"
+  }, OrangesApp.controller);
 });
 
 OrangesApp.View = function(opts) {
@@ -18,3 +22,15 @@ OrangesApp.View.prototype = {
             }
           }
 };
+
+OrangesApp.Binder = {
+  bind: function(targets, controller) {
+          this.bindPlantTreeActuator(targets.plantActuatorSelector, controller);
+        },
+
+  bindPlantTreeActuator: function(sel, controller) {
+                          $(sel).on('click',  function(e){
+                            controller.plantActuatorEvent(e);
+                          });
+                         }
+}
