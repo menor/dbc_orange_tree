@@ -3,6 +3,8 @@ OrangesApp.View = function(opts) {
 };
 
 OrangesApp.View.prototype = {
+  ORANGE_IMG_HTML: "<img id='orange' src='images/orange.gif'>",
+
   update: function(dataSource) {
             this.updateTreeImage(dataSource);
             this.updateAgeCount(dataSource);
@@ -13,7 +15,7 @@ OrangesApp.View.prototype = {
   updateFruitImages: function(dataSource) {
                        $(this.opts.orangesImagesContainer).empty();
                        for (var i = 1; i <= dataSource.tree.orangeCount; i++) {
-                         $(this.opts.orangesImagesContainer).append("<img id='orange' src='images/orange.gif'>");
+                         $(this.opts.orangesImagesContainer).append(this.ORANGE_IMG_HTML);
                        }
                      },
 
