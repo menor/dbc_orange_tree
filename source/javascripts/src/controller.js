@@ -9,7 +9,6 @@ OrangesApp.Controller.prototype = {
                       },
 
   pickActuatorEvent: function(e) {
-                       console.log('picking');
                        this.tree.pickOrange();
                        this.view.update(this);
                       },
