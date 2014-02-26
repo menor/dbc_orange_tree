@@ -17,12 +17,16 @@ OrangesApp.View = function(opts) {
 
 OrangesApp.View.prototype = {
   update: function(dataSource) {
-            if (dataSource.tree) {
-              $(this.opts.treeDivSelector).show();
-            } else {
-              $(this.opts.treeDivSelector).hide();
-            }
-          }
+            this.updateTreeImage(dataSource);
+          },
+
+  updateTreeImage: function(dataSource) {
+                     if (dataSource.tree) {
+                       $(this.opts.treeDivSelector).show();
+                     } else {
+                       $(this.opts.treeDivSelector).hide();
+                     }
+                   }
 };
 
 OrangesApp.Binder = function(targets, controller) {
