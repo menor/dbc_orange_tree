@@ -1,7 +1,8 @@
 $(function() {
   console.log('document is ready');
   OrangesApp.view = new OrangesApp.View({
-    treeDivSelector: "#orange-tree-template"
+    treeDivSelector: "#orange-tree-template",
+    ageDisplaySelector: "p.age"
   });
   OrangesApp.controller = new OrangesApp.Controller({ view: OrangesApp.view });
   new OrangesApp.Binder({
@@ -18,7 +19,12 @@ OrangesApp.View = function(opts) {
 OrangesApp.View.prototype = {
   update: function(dataSource) {
             this.updateTreeImage(dataSource);
+            this.updateAgeCount(dataSource);
           },
+
+  updateAgeCount: function(dataSource) {
+                    $(this.opts.ageDisplaySelector).text(dataSource.tree.age);
+                  },
 
   updateTreeImage: function(dataSource) {
                      if (dataSource.tree) {
