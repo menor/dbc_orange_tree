@@ -3,13 +3,14 @@ $(function() {
   OrangesApp.view = new OrangesApp.View({
     treeDivSelector: "#orange-tree-template",
     ageDisplaySelector: "p.age",
-    fruitCountDisplaySelector: "p.fruit-count"
+    fruitCountDisplaySelector: "p.fruit-count",
+    orangesImagesContainer: ".display-tree-big div"
   });
   OrangesApp.controller = new OrangesApp.Controller({ view: OrangesApp.view });
   new OrangesApp.Binder({
     plantActuatorSelector: "button.plant",
     pickActuatorSelector: "button.pick",
-    ageActuatorSelector: "button.age",
+    ageActuatorSelector: "button.age"
   }, OrangesApp.controller).bind();
 });
 
@@ -22,7 +23,15 @@ OrangesApp.View.prototype = {
             this.updateTreeImage(dataSource);
             this.updateAgeCount(dataSource);
             this.updateFruitCount(dataSource);
+            this.updateFruitImages(dataSource);
           },
+
+  updateFruitImages: function(dataSource) {
+                       $(this.opts.orangesImagesContainer).empty();
+                       for (var i = 1; i <= dataSource.tree.orangeCount; i++) {
+                         $(this.opts.orangesImagesContainer).append("<img id='orange' src='images/orange.gif'>");
+                       }
+                     },
 
   updateFruitCount: function(dataSource) {
                     $(this.opts.fruitCountDisplaySelector).text(dataSource.tree.orangeCount);
