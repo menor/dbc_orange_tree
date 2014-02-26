@@ -1,6 +1,6 @@
 $(function() {
   console.log('document is ready');
-  new OrangesApp.View();
+  OrangesApp.view = new OrangesApp.View();
 });
 
 OrangesApp.View = function() {
