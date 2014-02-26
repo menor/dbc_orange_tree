@@ -71,15 +71,4 @@ describe ("createTree", function() {
       expect(tree.dropOrange()).toBeDefined();
     });
   });
-
-  describe ("pickOrange", function() {
-    it("should return a orange object", function() {
-      expect(pickOrange()).toBeDefined();
-    });
-    it("should return an orange with a random diameter > 0", function() {
-      var orange = pickOrange();
-      expect(orange.diameter).toBeGreaterThan(0);
-    });
-  });
-
 });
