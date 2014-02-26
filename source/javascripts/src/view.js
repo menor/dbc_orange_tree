@@ -5,7 +5,9 @@ $(function() {
   });
   OrangesApp.controller = new OrangesApp.Controller({ view: OrangesApp.view });
   new OrangesApp.Binder({
-    plantActuatorSelector: "button.plant"
+    plantActuatorSelector: "button.plant",
+    pickActuatorSelector: "button.pick",
+    ageActuatorSelector: "button.age",
   }, OrangesApp.controller).bind();
 });
 
@@ -31,6 +33,8 @@ OrangesApp.Binder = function(targets, controller) {
 OrangesApp.Binder.prototype = {
   bind: function() {
           this.bindPlantTreeActuator();
+          this.bindPickTreeActuator();
+          this.bindAgeTreeActuator();
         },
 
   bindPlantTreeActuator: function() {
@@ -40,7 +44,25 @@ OrangesApp.Binder.prototype = {
                           $(sel).on('click',  function(e){
                             controller.plantActuatorEvent(e);
                           });
-                         }
+                         },
+
+  bindPickTreeActuator: function() {
+                          var controller = this.controller,
+                            sel = this.targets.pickActuatorSelector;
+
+                          $(sel).on('click',  function(e){
+                            controller.pickActuatorEvent(e);
+                          });
+                        },
+
+  bindAgeTreeActuator: function() {
+                          var controller = this.controller,
+                            sel = this.targets.ageActuatorSelector;
+
+                          $(sel).on('click',  function(e){
+                            controller.ageActuatorEvent(e);
+                          });
+                       }
 }
 
 OrangesApp.Controller = function(config) {
@@ -51,6 +73,14 @@ OrangesApp.Controller.prototype = {
   plantActuatorEvent: function(e) {
                         if (!this.tree){ this.plantTree() }
                         this.view.update(this);
+                      },
+
+  pickActuatorEvent: function(e) {
+                       console.log('picking');
+                      },
+
+  ageActuatorEvent: function(e) {
+                       console.log('aging');
                       },
 
   plantTree: function() {
