@@ -41,6 +41,11 @@ OrangesApp.Controller = function(config) {
 
 OrangesApp.Controller.prototype = {
   plantActuatorEvent: function(e) {
-                        console.log('clicked button');
-                      }
+                        if (!this.tree){ this.plantTree() }
+                        this.view.update(this);
+                      },
+
+  plantTree: function() {
+               this.tree = new Tree();
+             }
 };
