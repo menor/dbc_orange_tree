@@ -39,7 +39,9 @@ Tree.prototype = {
   },
 
   pickOrange: function() {
-                return this.oranges.shift();
+                var orange = this.oranges.shift();
+                this.orangeCount = this.oranges.length;
+                return orange;
               }
 }
 
