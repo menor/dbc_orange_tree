@@ -20,8 +20,9 @@ Tree.prototype = {
     this.age++;
     this.height += 10;
     if(this.age >= FRUIT_BEARING_AGE) {
-      this.orangeCount = Math.floor((Math.random()*10)+1);
-      for(var i=0; i<this.orangeCount; i++) {
+      var yield = Math.floor((Math.random()*10)+1);
+      this.orangeCount += yield;
+      for(var i=0; i < yield; i++) {
         this.oranges.push(new Orange());
       }
     }
