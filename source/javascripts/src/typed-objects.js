@@ -19,10 +19,10 @@ Tree.prototype = {
   grow: function() {
     this.age++;
     this.height += 10;
-    if(this.age == FRUIT_BEARING_AGE) {
+    if(this.age >= FRUIT_BEARING_AGE) {
       this.orangeCount = Math.floor((Math.random()*10)+1);
       for(var i=0; i<this.orangeCount; i++) {
-        this.oranges.push(new Orange);
+        this.oranges.push(new Orange());
       }
     }
     if(this.age > MAX_AGE) {
@@ -35,7 +35,11 @@ Tree.prototype = {
       this.orangeCount--;
       return new Orange;
     }
-  }
+  },
+
+  pickOrange: function() {
+                return this.oranges.shift();
+              }
 }
 
 function pickOrange(tree) {

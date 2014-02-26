@@ -77,10 +77,13 @@ OrangesApp.Controller.prototype = {
 
   pickActuatorEvent: function(e) {
                        console.log('picking');
+                       this.tree.pickOrange();
+                       this.view.update(this);
                       },
 
   ageActuatorEvent: function(e) {
-                       console.log('aging');
+                       this.tree.grow();
+                       this.view.update(this);
                       },
 
   plantTree: function() {
