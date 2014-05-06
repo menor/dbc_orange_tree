@@ -14,7 +14,6 @@
   border: solid black 2px;
 }
 
-
 #orange-tree-template { display: none; }
 
 .oranges {
@@ -23,5 +22,10 @@
   left: 300px;
 }
 
+.hidden {
+  /* There are more accessible ways to do this:
+     http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+  */
+  display: none;
+}
 
-/* Add more styles here*/
